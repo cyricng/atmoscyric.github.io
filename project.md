@@ -1,6 +1,6 @@
 ## Projecting the Future of Antarctica Sea Ice Using Reconstructed Data and ARIMA
 
-I applied machine learning techniques to investigate the extent of Antarctica's sea ice for the next five years. Below is my report.
+I applied machine learning techniques to investigate the extent of Antarctica's sea ice for the next five years. I've included my report below.
 
 ***
 
