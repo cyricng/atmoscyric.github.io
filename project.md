@@ -1,16 +1,15 @@
 ## Projecting the Future of Antarctica Sea Ice Using Reconstructed Data and ARIMA
 
-I applied machine learning techniques to investigate the extent of Antarctica's sea ice for the next five years. I've included my report below.
+I applied machine learning techniques to investigate the extent of Antarctica's sea ice for the next five years.
 
 ***
 
 ## Introduction 
 
-Here is a summary description of the topic. Here is the problem. This is why the problem is important.
+Antarctica sea ice is characterized by unpredictability. Unlike Arctic sea ice, Antarctic sea ice has not followed a trend that most scientists and the public would expect. While Arctic sea ice has decreased steadily due to increasing global temperatures, the opposite was occurring in the south. Since the satellite era, Antarctica's sea ice has steadily increased until the 2015/2016 season, when the sea ice extent reached what was then the record low. Just before that season, Antarctica's sea ice reached its maximum extent ever recorded in 2014, further suggesting the unpredictability of sea ice. Ever since the decrease in the 2015/2016 season, Antarctica's sea ice has continued to decrease on average. Antarctica follows a seasonal pattern with September being the maximum and February being the minimum. In September of 2023, Antarctica's sea ice reached the lowest maximum ever recorded. While rising temperatures play a role, Antarctic sea ice is complicated in nature. Due to the complicated interactions between atmospheric and oceanic phenomena, locally and globally, the past and future of Antarctica's sea ice is difficult to predict. This was the case until recently published reconstructed Antarctic sea ice data. 
 
-There is some dataset that we can use to help solve this problem. This allows a machine learning approach. This is how I will solve the problem using supervised/unsupervised/reinforcement/etc. machine learning.
+Recently, reconstructed Antarctic sea ice data by Fogt et al. has accurately modeled the increase and decrease recorded in the observation data, which is a problem continually missed by climate models. Using this reconstruction data set, I followed a machine learning approach to model the future of the Antarctic sea ice extent. I used an ARIMA (autoregressive integrated moving average model approach) to solve the problem. I conclude that the Antarctic sea ice extent for the next five years will continue to follow the current decreasing trend recorded in the past few years.
 
-We did this to solve the problem. We concluded that...
 
 ## Data
 
