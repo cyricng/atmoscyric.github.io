@@ -2,4 +2,5 @@ title: Cyric Ng
 description: AOS C111/204
 logo: /assets/IMG/template_logo.png
 show_downloads: true
-theme: jekyll-remote-Cayman
+theme: jekyll-remote-theme
+remote_theme: "pages-themes/cayman@v0.2.0"
