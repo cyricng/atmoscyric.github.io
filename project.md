@@ -83,7 +83,7 @@ To find the optimal parameters for the ARIMA model, the AIC metric (Akaike Infor
 
 ![](assets/IMG/test_diff.png){: width="400" } 
 ![](assets/IMG/test_sie.png){: width="400" }
-*Figure 3: The predicted compared to the testing sets of the difference in sea ice (top) and sea ice extent (bottom).*
+*Figure 3: The predicted compared to the testing sets of the difference in sea ice (left) and sea ice extent (right).*
 
 ## Results and Discussion
 
