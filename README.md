@@ -1,5 +1,5 @@
 **Hi, welcome to my page!**
-<img align="right" width="300" src="/assets/IMG/gif.gif">
+<img align="right" width="300" length='500' src="/assets/IMG/gif.gif">
 
 
 ### AOS C111/204 Final Report
