@@ -22,7 +22,7 @@ A new dataset is combined to include all the seasonal sea ice extent for each ye
 *Figure 1: This is the best-fit for four seasons reconstructed from 1979-2020.*
 
 
-![](assets/IMG/Interpolated Data.png){: width="1500" }
+![](assets/IMG/int_data.png){: width="1500" }
 *Figure 2: The interpolated data of sea ice extent using 500 points.*
 
 ## Modelling
