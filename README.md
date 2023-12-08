@@ -1,8 +1,6 @@
 **Hi, welcome to my page!**
+<img align="right" width="300" src="/assets/IMG/gif.gif">
 
-<div class="container">
-  <img src="assets/IMG/gif.gif" alt="Antarctic sea ice cycle">
-</div>
 
 ### AOS C111/204 Final Report
 
