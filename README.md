@@ -1,5 +1,5 @@
 **Hi, welcome to my page!**
-<img width="300" src="/assets/IMG/gif.gif">
+![](assets/IMG/gif.gif){: width="50" }
 
 
 ### AOS C111/204 Final Report
