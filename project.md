@@ -18,12 +18,12 @@ The primary data set for this project is from NSIDC Seasonal Antarctic Sea Ice E
 A new dataset is combined to include all the seasonal sea ice extent for each year as this was seasonal reconstruction data. As a result, a new file from 1979 to 2020 is created with four points with data for each season. Figure 1 shows the plotted seasonally reconstructed data from  DJF (December, January, February), MAM (March, April, May), JJA (June, July, August), and SON (September, October, November). Autoregression would not be accurate and reliable with only four data points representing each year. The data was interpolated with 500 points to provide more data for the autoregression (Figure 2). Additionally, a new data set is created with 411 points for reconstructed sea ice extent and years from 1979 to 2020 in intervals of 0.1 years.  
 
 
-![](assets/IMG/Seasonal Reconstruction Data.png){: width="500" }
+![](assets/IMG/Seasonal Reconstruction Data.png){: width="700" }
 
 *Figure 1: This is the best-fit for four seasons reconstructed from 1979-2020.*
 
 
-![](assets/IMG/Interpolated Data.png){: width="500" }
+![](assets/IMG/Interpolated Data.png){: width="700" }
 
 *Figure 2: The interpolated data of sea ice extent using 500 points.*
 ## Modelling
