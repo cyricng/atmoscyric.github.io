@@ -13,15 +13,19 @@ Recently, reconstructed Antarctic sea ice data by Fogt et al. has accurately mod
 
 ## Data
 
-The primary data set for this project is from NSIDC Seasonal Antarctic Sea Ice Extent Reconstructions developed by Ryan Fogt et al. The data is reconstructed from 1905 to 2020 using temperature and pressure observation indexes. Reconstruction data is available for the entire Antarctic sea ice extent and the five geographic regions (Amundsen-Bellingshausen Seas, Weddell Sea, King Hakon VII, East Antarctica, and Ross-Amundsen Sea); however, the entire Antarctica is focused for this project from 1979 to 2020. 
+The primary data set for this project is from NSIDC Seasonal Antarctic Sea Ice Extent Reconstructions developed by Ryan Fogt et al. The data is reconstructed from 1905 to 2020 using temperature and pressure observation indexes. The best-fit model for reconstructed data is available for the entire Antarctic sea ice extent and the five geographic regions (Amundsen-Bellingshausen Seas, Weddell Sea, King Hakon VII, East Antarctica, and Ross-Amundsen Sea); however, the entire Antarctica is focused on this project from 1979 to 2020. 
 
 A new dataset is combined to include all the seasonal sea ice extent for each year as this was seasonal reconstruction data. As a result, a new file from 1979 to 2020 is created with four points with data for each season. Figure 1 shows the plotted seasonally reconstructed data from  DJF (December, January, February), MAM (March, April, May), JJA (June, July, August), and SON (September, October, November). Autoregression would not be accurate and reliable with only four data points representing each year. The data was interpolated with 500 points to provide more data for the autoregression (Figure 2). Additionally, a new data set is created with 411 points for reconstructed sea ice extent and years from 1979 to 2020 in intervals of 0.1 years.  
 
 
-![](assets/IMG/datapenguin.png){: width="500" }
+![](assets/IMG/Seasonal Reconstruction Data.png){: width="500" }
 
-*Figure 1: Here is a caption for my diagram. This one shows a pengiun [1].*
+*Figure 1: This is the best-fit for four seasons reconstructed from 1979-2020.*
 
+
+![](assets/IMG/Interpolated Data.png){: width="500" }
+
+*Figure 2: The interpolated data of sea ice extent using 500 points.*
 ## Modelling
 
 Here are some more details about the machine learning approach, and why this was deemed appropriate for the dataset. 
