@@ -18,11 +18,11 @@ A new dataset is combined to include all the seasonal sea ice extent for each ye
   
 
 
-![](assets/IMG/Seasonal Reconstruction Data.png){: width="1000" }
+![](assets/IMG/Seasonal Reconstruction Data.png){: width="1500" }
 *Figure 1: This is the best-fit for four seasons reconstructed from 1979-2020.*
 
 
-![](assets/IMG/Interpolated Data.png){: width="1000" }
+![](assets/IMG/Interpolated Data.png){: width="2000" }
 *Figure 2: The interpolated data of sea ice extent using 500 points.*
 
 ## Modelling
@@ -30,6 +30,7 @@ A new dataset is combined to include all the seasonal sea ice extent for each ye
 ARIMA model is chosen for this project as it is a widely used and suitable statistical method for forecasting time series data. The model ran twice with two sets of data: 1) The transformed sea ice difference (Taking the difference between consecutive elements to remove seasonality and trends) and 2) The original best-fit reconstruction data. 
 
 **1) ADF**
+
 In addition, the data sets were checked for the presence of unit roots and stationarity using the ADF (Augmented Dickey-Fuller) test before undergoing the ARIMA model. The ADF test checks whether the data set has stationarity by providing the ADF value, P-value, number of lags, number of observations used for the SDF regression, and critical values calculation, the critical values which are displayed in 1%, 5%, and 10%.  The results of the ADF test for the first data set likely indicate there is stationarity in the data with the negative ADF value and the statistically small P-value (cite chart). The results for the second data set did not indicate stationarity as the ADF value is higher than critical values and the P-value is relatively high (cite table 2). Non-stationarity in the ARIMA model can impact results, which will be discussed in the conclusion section.
 
 ```python
@@ -44,11 +45,20 @@ def ad_test(dataset):
     for key_diff, val_diff in dftest_diff[4].items():
         print("\t",key_diff,":", val_diff)
 ```
-| Attempt | #1    | #2    |
-| :-----: | :---: | :---: |
-| Seconds | 301   | 283   |
+
+| Categories | Values    |
+| :-----: | :---: |
+| ADF | -5.94   |
+| P-Value | 2.25e-07   |
+| Num of Lags | 17   |
+| Num of Obs | 392   |
+| Critical Values | 1% : -3.45
+5% : -2.87
+10% : -2.57   |
 *Table 1: Results of the ADF tests for the difference in sea ice (left) and sea ice extent (right)*
+
 **2) Auto Arima and Training**
+
 The data is put into ‘auto_arima’ to choose the optimal parameters for the ARIMA model (p,d,q) to minimize the AIC 
 
 ```python
@@ -59,19 +69,19 @@ stepwise_fit = auto_arima(recon_diff.values,trace=True,
                           suppress_warnings=True)
 stepwise_fit.summary()
 ```
-To find the optimal parameters for the ARIMA model, the AIC metric (Akaike Information Criterion) is used in model selection. A lower AIC value indicates a better fit for the data. The AIC value for the first data set is 574.214 and 194.754 in the second data set. The summary indicated that the optimal parameters (p,d,q) for the first data set is (2,0,1); however, through multiple runs and tests, the more suitable (p,d,q) for the first data set is (5,0,3). The second (p,d,q) resulted in a better and more accurate fit. The (p,d,q) for the second data set is (2,0,2). Ten percent of the 500 points were split to be the testing set. The training set has 369 points and the testing set has 41 points. The training set is not randomized and is the last 41 points of the data set, spanning from 2016 to 2020. The testing set spans from 1979 to 2016. Predictions were made by inputting the testing sets in the ARIMA model using the (p,d,q), for the respective data sets. The first data set projected similar results in the 2016 cycle but began an upward shift compared to the testing set. The second data set had slight overfitting up until 2017 and underfitting beginning in 2018 (figures cite). Overall, both models performed well with an RMSE (root squared mean error) of 0.57267 for the first data set and 0.80034 for the second data set. 
+To find the optimal parameters for the ARIMA model, the AIC metric (Akaike Information Criterion) is used in model selection. A lower AIC value indicates a better fit for the data. The AIC value for the first data set is 574.214 and 194.754 in the second data set. The summary indicated that the optimal parameters (p,d,q) for the first data set is (2,0,1); however, through multiple runs and tests, the more suitable (p,d,q) for the first data set is (5,0,3). The second (p,d,q) resulted in a better and more accurate fit. The (p,d,q) for the second data set is (2,0,2). Ten percent of the 500 points were split to be the testing set. The training set has 369 points and the testing set has 41 points. The training set is not randomized and is the last 41 points of the data set, spanning from 2016 to 2020. The testing set spans from 1979 to 2016. Predictions were made by inputting the testing sets in the ARIMA model using the (p,d,q), for the respective data sets. The first data set projected similar results in the 2016 cycle but began an upward shift compared to the testing set (Figure 3). The second data set had slight overfitting up until 2017 and underfitting beginning in 2018 (Figure 3). Overall, both models performed well with an RMSE (root squared mean error) of 0.57267 for the first data set and 0.80034 for the second data set. 
 
-![](assets/IMG/test_diff.png){: width="1000" } 
-![](assets/IMG/test_sie.png){: width="1000" }
-*Figure 3: The interpolated data of sea ice extent using 500 points.*
+![](assets/IMG/test_diff.png){: width="500" } 
+![](assets/IMG/test_sie.png){: width="500" }
+*Figure 3: The predicted compared to the testing sets of the difference in sea ice (top) and sea ice extent (bottom).*
 
 ## Results and Discussion
 
-The ARIMA models were used to predict the future trend of Antarctic sea ice using the same optimal parameters (p,d,q). 50 data points were chosen to generate future years for prediction which is approximately 5 years. The predictions for both sets follow the same seasonality as current Antarctic sea ice trends (figures) 
+The ARIMA models were used to predict the future trend of Antarctic sea ice using the same optimal parameters (p,d,q). 50 data points were chosen to generate future years for prediction which is approximately 5 years. The predictions for both sets follow the same seasonality as current Antarctic sea ice trends (Figure 4) 
 
-![](assets/IMG/arima_diff.png){: width="1000" } 
-![](assets/IMG/arima_sie.png){: width="1000" }
-*Figure 4: The interpolated data of sea ice extent using 500 points.*
+![](assets/IMG/arima_diff.png){: width="1200" } 
+![](assets/IMG/arima_sie.png){: width="1200" }
+*Figure 4: The predictions of the difference (top) and the sea ice extent (bottom) from the ARIMA model*
 
 The predictions for the first data set continue to follow a similar trend of the sea ice seasonal cycles. The peak difference and minimum difference stay within the range with no notable changes to sea ice. It is important to note that the first data set is shifted to the left as the difference in sea ice is taken. This moves the array position as the consecutive values are subtracted. 
 
