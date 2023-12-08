@@ -1,5 +1,5 @@
 **Hi, welcome to my page!**
-![](assets/IMG/gif.gif){: width="50" }
+![](assets/IMG/gif.gif){: width="300" }
 
 
 ### AOS C111/204 Final Report
