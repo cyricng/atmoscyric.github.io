@@ -1,5 +1,8 @@
-**Hi, welcome to my page!** 
+**Hi, welcome to my page!**
 
+<div class="container">
+  <img src="assets/IMG/gif.gif" alt="Antarctic sea ice cycle">
+</div>
 
 ### AOS C111/204 Final Report
 
